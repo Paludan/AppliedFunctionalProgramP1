@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Remove="Program.fs" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Include="Types.fsx" />
+    <Compile Include="Main.fsx" />
+  </ItemGroup>
 </Project>

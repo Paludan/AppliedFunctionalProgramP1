@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{CDB41F35-3F52-44EA-BFE3-F07B07243D0B}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="DrawingTrees/Program.fs">
     <Files>
-      <File FileName="DrawingTrees/Program.fs" Line="1" Column="1" />
+      <File FileName="DrawingTrees/Program.fs" Line="8" Column="5" />
+      <File FileName="DrawingTrees/Types.fsx" Line="2" Column="15" />
+      <File FileName="DrawingTrees/Main.fsx" Line="2" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.DrawingTrees FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.DrawingTrees PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
