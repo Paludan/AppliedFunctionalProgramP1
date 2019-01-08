@@ -800,13 +800,13 @@
       "projectName": "DrawingTrees",
       "projectPath": "/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/DrawingTrees.fsproj",
       "packagesPath": "/Users/paludan/.nuget/packages/",
-      "outputPath": "/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/obj",
+      "outputPath": "/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/paludan/.config/NuGet/NuGet.Config"
+        "/Users/paludan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -828,7 +828,6 @@
             "version": "[4.5.2, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true

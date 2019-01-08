@@ -11,5 +11,6 @@
   <ItemGroup>
     <None Include="Types.fsx" />
     <Compile Include="Main.fsx" />
+    <None Include="Drawing.fsx" />
   </ItemGroup>
 </Project>
