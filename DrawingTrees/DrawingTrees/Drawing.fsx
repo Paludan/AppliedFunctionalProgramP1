@@ -43,17 +43,16 @@ module Drawing =
         (drawTree (0,0) zoomsize path tree) |>ignore
         drawBottom path |>ignore
 
-   
-    let rec buildArray d =
-        match d with
-        | 0 -> ATyp(ITyp, Some(0))
-        | d -> ATyp ( (buildArray (d-1), Some(d)))
-
-    and buildWidth w d =
-        match w with
-        | 0 -> []
-        | w -> VarDec(buildArray d, "Array") :: buildWidth (w-1) d
-
     let rec createTree w d = 
-        Node((string d), [(ProgramConverter <| P(buildWidth w d, []))])
+         Node((string d), createWidth w <| createDepth (d-1))
 
+    and createWidth w child= 
+         match w with
+         | 0 -> []
+         | n -> child::(createWidth (n-1) child)
+
+    and createDepth d =
+         match d with 
+         | 1 -> Node("1", [])
+         | n -> Node((string n), [(createDepth (n-1))])
+         

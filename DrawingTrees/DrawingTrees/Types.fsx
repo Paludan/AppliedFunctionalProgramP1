@@ -105,8 +105,7 @@ module Types =
              | FTyp of Typ list * Typ option (* Type function and procedure *)
 
     type Program = P of Dec list * Stm list   (* Program                 *)
-    
-
+   
     let rec ExpHandler exp = 
         match exp with 
         | N i -> Node(i.ToString(),[])
@@ -114,6 +113,7 @@ module Types =
         | Access a -> Node("ContOf",[AccessHandler a])
         | Addr a -> Node("Addr",[AccessHandler a])
         | Apply (str, el) -> Node(str,List.map ExpHandler el)
+
     and AccessHandler a =
         match a with 
         | AVar str -> Node("Var\n\""+str+"\"",[])
@@ -129,7 +129,7 @@ module Types =
         | Alt gc -> Node("Alt",GCHandler gc)
         | Do gc -> Node("While",GCHandler gc)
         | Block (dl, sl) -> Node("Block", List.append (List.map DecHandler dl) [Node("Seq",List.map StmHandler sl)])
-        | Call (str, el) -> Node(str, [Node("Seq", List.map ExpHandler el)])
+        | Call (str, el) -> Node(str, List.map ExpHandler el)
 
 
     and GCHandler gclist = 
@@ -148,9 +148,9 @@ module Types =
         match t with
         | ITyp -> Node("IntTyp",[])
         | BTyp -> Node("BoolTyp",[])
-        | ATyp (t,i) -> Node("ArrTyp",[TypHandler t; Node(i.ToString(),[])]) //TODO: is this wrong???
+        | ATyp (t,i) -> Node("ArrTyp",[TypHandler t; Node(i.ToString(),[])]) 
         | PTyp t -> Node("PointTyp",[TypHandler t])
-        | FTyp (tl, Some(t)) -> Node("TypFunc",List.append (List.map TypHandler tl) [TypHandler t])     //TODO: wrong?
+        | FTyp (tl, Some(t)) -> Node("TypFunc",List.append (List.map TypHandler tl) [TypHandler t])     
         | FTyp (tl, None) -> Node("TypFunc", List.map TypHandler tl)
 
     let ProgramConverter (p:Program) =

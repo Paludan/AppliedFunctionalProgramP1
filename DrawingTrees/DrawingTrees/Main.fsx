@@ -8,9 +8,30 @@ open System
 
 [<EntryPoint>]
 let main argv =
-    let val1 =  Node("x",[Node("y",[Node("y1",[]);Node("y2",[]);Node("y3",[])]);Node("z",[]);Node("z",[]);Node("z",[]);Node("a",[Node("a1",[]);Node("a2",[]);Node("a3",[])])])
 
-    let tree = design (createTree 500 500)
+    let ast = 
+        P ([],
+            [Block
+               ([VarDec (ATyp (ITyp,Some 4),"n"); VarDec (ATyp (ITyp,Some 1),"y")],
+                [Do
+                   (DrawingTrees.Types.GC 
+                      [(Apply ("ApplyPrim",[Apply ("<>",[]); Access (AVar "n"); N 0]),
+                        [PrintLn
+                           (Apply
+                              ("ApplyPrim",[Apply ("toString",[]); Access (AVar "n")]));
+                         PrintLn
+                           (Apply
+                              ("ApplyPrim",[Access (AVar "y"); Apply ("toString",[])]));
+                         Ass
+                           (AVar "y",
+                            Apply
+                              ("ApplyPrim",
+                               [Apply ("*",[]); Access (AVar "n"); Access (AVar "y")]));
+                         Ass
+                           (AVar "n",
+                            Apply ("ApplyPrim",[Apply ("-",[]); Access (AVar "n"); N 1]))])]);
+                 PrintLn (Apply ("ApplyPrim",[Apply ("toString",[]); Access (AVar "n")]));
+                 PrintLn (Apply ("ApplyPrim",[Apply ("toString",[]); Access (AVar "y")]))])])
 
     let path = String.concat "" 
                 [System.IO.Directory.GetCurrentDirectory() + string System.IO.Path.DirectorySeparatorChar;
@@ -22,7 +43,7 @@ let main argv =
                 string System.DateTime.UtcNow.Second;
                 ".ps"]
 
-    let dps1= drawPS (2000,2000) "/Users/paludan/ja.ps" 40 tree
+    let dps1= drawPS (2000,2000) path 40 (design (ProgramConverter ast))
 
     printf "Path to image: %A" path
     0 // return an integer exit code

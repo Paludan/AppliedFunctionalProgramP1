@@ -1,7 +1,0 @@
-/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/bin/Debug/netcoreapp2.1/DrawingTrees.deps.json
-/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/bin/Debug/netcoreapp2.1/DrawingTrees.runtimeconfig.json
-/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/bin/Debug/netcoreapp2.1/DrawingTrees.runtimeconfig.dev.json
-/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/bin/Debug/netcoreapp2.1/DrawingTrees.dll
-/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/bin/Debug/netcoreapp2.1/DrawingTrees.pdb
-/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/obj/Debug/netcoreapp2.1/DrawingTrees.dll
-/Users/paludan/Documents/AppliedFunctionalProgramP1/DrawingTrees/DrawingTrees/obj/Debug/netcoreapp2.1/DrawingTrees.pdb
