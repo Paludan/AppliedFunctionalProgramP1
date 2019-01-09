@@ -22,7 +22,7 @@ let main argv =
                 string System.DateTime.UtcNow.Second;
                 ".ps"]
 
-    let dps1= drawPS (140000,100000) "/Users/paludan/ja.ps" 40 tree
+    let dps1= drawPS (2000,2000) "/Users/paludan/ja.ps" 40 tree
 
     printf "Path to image: %A" path
     0 // return an integer exit code
